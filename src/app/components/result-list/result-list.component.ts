@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-list.component.css']
 })
 export class ResultListComponent implements OnInit {
-
+  public list = [
+    {
+      name: "ett"
+    },
+    {
+      name: "två"
+    }
+  ];
   constructor() { }
 
   ngOnInit() {
