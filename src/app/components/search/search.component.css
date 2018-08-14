@@ -1,0 +1,36 @@
+.search-section {
+    margin: 10px 0; 
+}
+
+.search-control {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+input {
+	display: flex;
+	flex-grow: 5;
+	width: 100%;
+	height: 40px;
+	padding: 3px;
+	border: 2px solid #eee;	
+    font-size: 20px;
+    border-radius: 3px;
+    border-right: none;
+}
+input:focus {
+    outline: #eee auto 5px;
+}
+button {
+	display:flex;
+	flex-grow: 1;
+	height: 40px;
+    font-size: 20px;
+    border-radius: 3px;
+    background-color: aquamarine;
+}
+button:hover {
+    cursor: pointer;
+    background-color: beige;
+}

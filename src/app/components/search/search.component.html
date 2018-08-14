@@ -1,3 +1,15 @@
-<section>
-  <input type="search">
+<section class="search-section">
+  <form role="search">
+    <div class="search-control">
+      <input type="search" id="site-search" name="search-movie" 
+        placeholder="Sök film" aria-label="Sök filmnamn på IMDB"
+        (keyup)="onKeyUp($event)">
+      <button>Sök</button>
+    </div>
+  </form>
+  <section class="search-result">
+    <ul>
+      <li *ngFor="let result of resultList"> {{ result.name }}</li>
+    </ul>
+  </section>
 </section>
