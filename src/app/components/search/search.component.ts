@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { Movie } from '../../models/models';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-search',
@@ -10,7 +11,7 @@ import { Movie } from '../../models/models';
 export class SearchComponent implements OnInit {
 
   public resultList: Array<any>
-  constructor(public searchService: SearchService) { }
+  constructor(public searchService: SearchService, public messageService: MessageService) { }
 
   ngOnInit() {
   }
@@ -33,5 +34,10 @@ export class SearchComponent implements OnInit {
     } else {
       this.resultList = [];
     }
+  }
+
+  addToMyMovies(nameOfMovie){
+    const movie = new Movie(new Date(), nameOfMovie);
+    this.messageService.addNewMovie(movie);
   }
 }

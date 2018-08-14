@@ -1,5 +1,9 @@
-<section>
+<section *ngIf="movieList?.length > 0">
+  <h1>Mina filmer</h1>
   <ul>
-    <li *ngFor="let item of list">{{ item.name }}</li>
+    <li *ngFor="let item of movieList">
+      <h3>{{ item.name }}</h3>
+      <p>Lades till i listan: {{ item.timestamp | date:'yyyy-MM-dd, hh:mm' }}</p>
+    </li>
   </ul>
 </section>

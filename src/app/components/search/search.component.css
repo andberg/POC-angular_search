@@ -1,5 +1,5 @@
 .search-section {
-    margin: 10px 0; 
+    margin: 40px 0; 
 }
 
 .search-control {
@@ -33,4 +33,27 @@ button {
 button:hover {
     cursor: pointer;
     background-color: beige;
+}
+button:active, button:focus {
+    outline: #eee auto 5px;
+}
+
+.search-result li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 2px solid #eee;
+    padding: 5px 0;
+}
+.search-result p {
+    display: flex;
+    flex-grow: 1;
+}
+
+.search-result button {
+    height: 20px;
+    font-size: 14px;
+    flex-grow: 1;
+    max-width: 132px;
 }
