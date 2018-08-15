@@ -1,9 +1,0 @@
-<section *ngIf="movieList?.length > 0">
-  <h2>Mina filmer</h2>
-  <ul>
-    <li *ngFor="let item of movieList; let i = index">
-      <h3>{{ item.name }} <button class="remove-btn" (click)="removeItem(i)"> X </button></h3>
-      <p>Lades till i listan: {{ item.timestamp | date:'yyyy-MM-dd, hh:mm' }}</p>
-    </li>
-  </ul>
-</section>
