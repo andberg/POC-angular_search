@@ -31,10 +31,15 @@ export class ResultListComponent implements OnInit {
     }
   }
 
-  isDuplicate(newMovie){
+  removeItem(index) {
+    this.movieList.splice(index, 1);
+    sessionStorage.setItem('movieList', JSON.stringify(this.movieList));
+  }
+
+  isDuplicate(newMovie) {
     let isDuplicate = false;
-    this.movieList.forEach((movie)=>{
-      if (movie.name.indexOf(newMovie.name) !== -1){
+    this.movieList.forEach((movie) => {
+      if (movie.name.indexOf(newMovie.name) !== -1) {
         isDuplicate = true;
       }
     });

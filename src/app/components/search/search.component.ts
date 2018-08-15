@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { Movie } from '../../models/models';
 import { MessageService } from '../../services/message.service';
@@ -11,6 +11,7 @@ import { MessageService } from '../../services/message.service';
 export class SearchComponent implements OnInit {
 
   public resultList: Array<any>
+  @ViewChild('searchInput') searchInput: ElementRef;
   constructor(public searchService: SearchService, public messageService: MessageService) { }
 
   ngOnInit() {
@@ -36,8 +37,14 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  addToMyMovies(nameOfMovie){
+  resetList() {
+    this.searchInput.nativeElement.value = '';
+    this.resultList = [];
+  }
+
+  addToMyMovies(nameOfMovie) {
     const movie = new Movie(new Date(), nameOfMovie);
+    this.resetList();
     this.messageService.addNewMovie(movie);
   }
 }

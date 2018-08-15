@@ -8,32 +8,37 @@
 	flex-direction: row;
 	justify-content: flex-start;
 }
+
 input {
 	display: flex;
 	flex-grow: 5;
 	width: 100%;
 	height: 40px;
-	padding: 3px;
+	padding: 3px 8px;
 	border: 2px solid #eee;	
     font-size: 20px;
     border-radius: 3px;
     border-right: none;
 }
+
 input:focus {
     outline: #eee auto 5px;
 }
+
 button {
 	display:flex;
 	flex-grow: 1;
 	height: 40px;
     font-size: 20px;
     border-radius: 3px;
-    background-color: aquamarine;
+    background-color: #ABE886;
 }
+
 button:hover {
     cursor: pointer;
-    background-color: beige;
+    background-color: #ABE843;
 }
+
 button:active, button:focus {
     outline: #eee auto 5px;
 }
@@ -42,18 +47,33 @@ button:active, button:focus {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    width: 100%;
-    border-bottom: 2px solid #eee;
-    padding: 5px 0;
 }
+
+.search-result li:nth-child(odd){
+    background-color: #eee;
+}
+
+.search-result li:nth-child(even){
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+
+.search-result li:last-of-type{
+    border-bottom: 1px solid #eee;
+}
+
 .search-result p {
     display: flex;
     flex-grow: 1;
 }
 
 .search-result button {
-    height: 20px;
     font-size: 14px;
-    flex-grow: 1;
-    max-width: 132px;
+    padding: 5px 9px;
+    background-color: transparent;
+    border: none;
+}
+
+.search-result button:hover {
+    background-color: #D3D3D3;
 }

@@ -3,7 +3,7 @@
   <form role="search">
     <div class="search-control">
       <input type="search" id="movie-search" name="search-movie" placeholder="Sök film" 
-        aria-label="Sök filmnamn på IMDB" (keyup)="onKeyUp($event)"
+        aria-label="Sök filmnamn på IMDB" (keyup)="onKeyUp($event)" #searchInput
         autocomplete="off">
       <button>Sök</button>
     </div>
@@ -12,8 +12,7 @@
   <section class="search-result">
     <ul>
       <li *ngFor="let result of resultList | slice:0:5; let i=index">
-        <p>{{ result.name }} </p>
-        <button (click)="addToMyMovies(result.name)">Lägg till i min lista</button>
+        <button (click)="addToMyMovies(result.name)">{{ result.name }}</button>
       </li>
     </ul>
   </section>
